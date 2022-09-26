@@ -5,4 +5,5 @@ from django.views.generic import ListView
 
 class FoodListView(ListView):
     ''' List of dishes '''
+    paginate_by = 3
     model = Food

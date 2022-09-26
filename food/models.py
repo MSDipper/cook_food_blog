@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 
 from ckeditor.fields import RichTextField
@@ -6,6 +7,7 @@ from ckeditor.fields import RichTextField
 
 class Category(models.Model):
     name = models.CharField(max_length=150, unique=True, verbose_name='Name')
+    image = models.ImageField(upload_to='image_cat/', blank=True, null=True)
     slug = models.SlugField(max_length=150, unique=True, verbose_name='URL')
     
     def __str__(self):
