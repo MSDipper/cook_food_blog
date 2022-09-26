@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from foods.models import Food
+from food.models import Food
 from django.views.generic import ListView
 
 
