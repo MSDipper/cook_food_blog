@@ -2,7 +2,7 @@ from distutils.command.upload import upload
 from django.db import models
 
 from ckeditor.fields import RichTextField
-
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -48,6 +48,10 @@ class Food(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse("food_single", kwargs={"slug": self.slug})
+    
     
     class Meta:
         verbose_name = 'Food'
