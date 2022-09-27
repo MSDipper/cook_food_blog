@@ -1,18 +1,8 @@
-{% load food_tag %}
-
-<div class="sidebar-box categories text-center ftco-animate">
-    <h2 class="heading mb-4">Categories</h2>
-    <ul class="category-image">
-      {% for category in category %}
-        <li>
-            <a href="#" class="img d-flex align-items-center justify-content-center text-center" style="background-image: url({{ category.image.url }});">
-                <div class="text">
-                    <h3>{{ category.title }}</h3>
-                </div>
-            </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-
+<div class="sidebar-box ftco-animate">
+  <ul class="categories">
+    <h3 class="heading mb-4">Categories</h3>
+    {% for category in categories %}
+      <li><a href="#">{{ category.name }} <span>{{ category.category_count  }}</span></a></li>
+  {% endfor %}
+  </ul>
 </div>
