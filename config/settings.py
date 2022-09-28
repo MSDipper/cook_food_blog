@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     'ckeditor',
     
+    'home.apps.HomeConfig',
     'about.apps.AboutConfig',
     'food.apps.FoodConfig',
     'lifestyle.apps.LifestyleConfig',
