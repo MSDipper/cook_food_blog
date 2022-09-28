@@ -8,16 +8,21 @@ class FoodListView(ListView):
     paginate_by = 3
     model = Food
     
+    def get_queryset(self):
+        return Food.objects.all()
 
 
 
 class FoodDetailView(DetailView):
     model = Food
     context_object_name = 'food'
+    slug_url_kwarg = 'slug'
+
 
 
 class Search(ListView):
     paginate_by = 3
+    
     def get_queryset(self):
         return Food.objects.filter(title__icontains=self.request.GET.get("q"))
     

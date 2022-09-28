@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     
     'ckeditor',
     
-    'food.apps.FoodConfig'
+    'food.apps.FoodConfig',
+    'lifestyle.apps.LifestyleConfig',
 ]
 
 MIDDLEWARE = [

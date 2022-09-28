@@ -26,7 +26,7 @@
 							<div class="col-md-4 ftco-animate">
 								<div class="blog-entry">
 									{% if food.image %}
-										<a href="single.html" class="img-2"><img src="{{ food.image.url }}" class="img-fluid" alt="Colorlib Template"></a>
+										<a href="{{ food.get_absolute_url }}" class="img-2"><img src="{{ food.image.url }}" class="img-fluid" alt="Colorlib Template"></a>
 									{% else %}
 									{% endif %}
 									<div class="text pt-3">
@@ -42,29 +42,7 @@
 					{% endif %}
 				</div>	
 			</div>
-			<div class="row mt-5">
-			  <div class="col text-center">
-				<div class="block-27">
-					<ul>
-						{% if page_obj.has_previous %}
-							<li><a href="?q={{ q }}&page={{ page_obj.previous_page_number }}">&lt;</a></li>
-						{% endif %}
-					
-						{% for page in page_obj.paginator.page_range %}
-						{% if page_obj.number == page %}
-							<li class="active"><a href="?q={{ q }}&page={{ page }}">{{ page }}</a></li>
-						{% elif page > page_obj.number|add:-3 and page < page_obj.number|add:3 %}
-							<li><a href="?q={{ q }}&page={{ page }}">{{ page }}</a></li>
-						{% endif %}
-						{% endfor %}
-					
-						{% if page_obj.has_next %}
-							<li><a href="?q={{ q }}&page={{ page_obj.next_page_number }}">&gt;</a></li>
-						{% endif %}  
-					</ul>
-				</div>
-			  </div>
-			</div>
+			{% include 'include/paginate_by.html' %}
 		</div>
 
 		<div class="col-lg-3">
