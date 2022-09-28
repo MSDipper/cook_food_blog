@@ -11,10 +11,6 @@ def get_categories_photo(count):
     return {'category_list':category_list}
 
 
-# @register.simple_tag()
-# def get_categories_all():
-#     ''' The output of categories in the food blog '''
-#     return Category.objects.all()
 
 
 @register.inclusion_tag('food/include/tags/category_tag.html')

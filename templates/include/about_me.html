@@ -1,0 +1,18 @@
+{% load about_tag %}
+    <div class="sidebar-wrap">
+        <div class="sidebar-box p-4 about text-center ftco-animate">
+          <h2 class="heading mb-4">About Me</h2>
+          {% get_about as about_list %}
+            {% for about in about_list %}
+                <img src="{{ about.main_image.url }}" class="img-fluid" alt="Colorlib Template">
+                <div class="text pt-4">
+                    
+                <p>{{ about.content_us }}</p>
+            {% endfor %}
+              
+          </div>
+        </div>
+
+
+
+
