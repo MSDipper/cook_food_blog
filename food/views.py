@@ -31,3 +31,8 @@ class Search(ListView):
         context = super().get_context_data(*args, **kwargs)
         context['q'] = self.request.GET.get('q')
         return context
+
+class GetCategoryListView(ListView):
+    paginate_by = 6
+    def get_queryset(self):
+        return Food.objects.filter(category__slug=self.kwargs.get('slug')).select_related('category')
