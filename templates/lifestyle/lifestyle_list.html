@@ -46,14 +46,8 @@
 				
         	{% include 'include/about_me.html' %}
 
-			<div class="sidebar-box p-4 ftco-animate">
-				<form action="{% url 'search' %}" method='get' class="search-form">
-				 <div class="form-group">
-				   <span class="icon icon-search"></span>
-				   <input type="text" name='q' class="form-control" placeholder="Search">
-				 </div>
-			   </form>
-			 </div>
+
+			{% include 'lifestyle/include/life_style_search.html' %}
 		</div>
 			{% get_categories_photo count=2 %}
         	</div>
