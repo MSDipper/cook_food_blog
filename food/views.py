@@ -11,7 +11,7 @@ class FoodListView(ListView):
     model = Food
     
     def get_queryset(self):
-        return Food.objects.all()
+        return Food.objects.all().select_related('category')
 
 
 
@@ -19,6 +19,9 @@ class FoodDetailView(DetailView):
     model = Food
     context_object_name = 'food'
     slug_url_kwarg = 'slug'
+    
+    def get_queryset(self):
+        return Food.objects.all().prefetch_related('tag')
 
 
 

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load home_tag %}
+{% load about_tag %}
 {% load food_tag %}
 
 {% block content %}
@@ -95,7 +96,7 @@
 					{% endfor %}
         		</div>
         	</div>
-			{% get_about_post as about_list %}
+			 {% get_about as about_list %}
 			{% for about in about_list %}
         	<div class="col-lg-3">
         		<div class="sidebar-wrap">
@@ -130,7 +131,7 @@
 	        </div>
     		</div>
     	</div>
-		{% endfor %}
+		{% endfor %} 
     </section>
 
     <section class="ftco-section">
@@ -184,7 +185,7 @@
         </div>
     	</div>
     </section>
-   	{% get_about_post as about_list %}
+   	{% get_about as about_list %}
 	{% for about in about_list %}
     <section class="ftco-counter ftco-section ftco-no-pt ftco-no-pb img" id="section-counter">
     	<div class="container">

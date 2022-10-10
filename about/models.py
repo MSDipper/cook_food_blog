@@ -13,7 +13,7 @@ class About(models.Model):
     slug = models.SlugField(max_length=100, verbose_name='URL')
     
     def __str__(self):
-        return f'{self.mini_content}'
+        return f'{self.name}'
     
     class Meta:
         verbose_name = 'About us'

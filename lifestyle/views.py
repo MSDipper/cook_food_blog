@@ -12,3 +12,5 @@ class LifeStyleDetailView(ListView):
     paginate_by = 3
     template_name = 'lifestyle/lifestyle_list.html'
     
+    def get_queryset(self):
+        return Food.objects.all().select_related('category')

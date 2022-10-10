@@ -11,12 +11,12 @@ register = template.Library()
 
 @register.simple_tag()
 def get_food_posts(count=2):
-    return Food.objects.order_by('id')[:count]
+    return Food.objects.order_by('id')[:count].select_related('category')
 
 
 @register.simple_tag()
-def get_about_post():
-    return About.objects.all
+def get_about():
+    return About.objects.all()
 
 @register.simple_tag()
 def get_categories_count():

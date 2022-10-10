@@ -1,11 +1,12 @@
-{% load home_tag %}
+{% load home_tag cache %}
+{% cache 5000 footer %}
 <footer class="ftco-footer ftco-footer-2 ftco-section">
     <div class="container">
       <div class="row mb-5">
         <div class="col-md">
           <div class="ftco-footer-widget mb-4">
             <h2 class="ftco-heading-2">Stories</h2>
-            {% get_about_post as about_post %}	
+            {% get_about as about_post %}	
             {% for about in about_post %}
               <p>{{ about.mini_content|truncatewords:'50'|safe }}</p>
             {% endfor %}
@@ -26,3 +27,4 @@
       </div>
     </div>
   </footer>
+  {% endcache %}
