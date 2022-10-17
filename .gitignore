@@ -20,6 +20,8 @@ __pycache__/
 !*media/.gitkeep
 media/*
 
+.cache
+
 log/debug.log
 
 build
