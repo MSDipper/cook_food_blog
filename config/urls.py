@@ -7,7 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('home/', include('home.urls')),
+    path('', include('home.urls')),
     path('about/', include('about.urls')),
     path('food/', include('food.urls')),
     path('lifestyle/', include('lifestyle.urls')),
